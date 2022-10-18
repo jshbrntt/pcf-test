@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "main": "src/main.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "test": "jest",
+    "format": "prettier --write {src,__tests__}"
+  },
+  "engines": {
+    "node": ">=16.17.0 <17"
   },
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "jest": "29.2.0",
+    "prettier": "2.7.1"
+  }
 }

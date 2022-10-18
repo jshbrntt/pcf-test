@@ -2,13 +2,30 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug Jest Tests",
+            "type": "node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "${workspaceFolder}/exercise-1-programming",
+            "runtimeArgs": [
+                "--inspect-brk",
+                "node_modules/.bin/jest",
+                "--runInBand"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/exercise-1-programming/src/main.js"
+            "cwd": "${workspaceFolder}/exercise-1-programming",
+            "program": "src/main.js"
         }
     ]
 }

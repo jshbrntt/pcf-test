@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`1x1 grid walk 1`] = `"HI"`;
+
+exports[`2x2 grid walk 1`] = `"HI, 1, 2, 3"`;
+
+exports[`breadth first walk 1`] = `"HI, 1, 2, 3, 4, 13, 12, 11, 10, 9, 14, 15, 16, 17, 18"`;
+
+exports[`depth first walk 1`] = `"HI, 9, 14, 15, 10, 1, 2, 11, 16, 17, 12, 3, 4, 13, 18"`;
+
+exports[`grid with no control characters 1`] = `"HI, 1, 2, 3, 4"`;
+
+exports[`loop 2x2 grid walk 1`] = `"HI, 1, 2, 3, LOOP"`;
+
+exports[`original test case 1`] = `"HI, 1, 2, 3, 4, 13, 18, 17, 16, 15, 14, 9, 10, 11, 12, LOOP"`;
+
+exports[`reverse 2x2 grid walk 1`] = `"HI, 3, 2, 1"`;
+
+exports[`reverse loop 2x2 grid walk 1`] = `"HI, 3, 2, 1, LOOP"`;
+
+exports[`spiral walk 1`] = `"HI, a, b, c, d, e, f, g, o, w, 5, 4, 3, 2, 1, z, y, x, p, h, i, j, k, l, m, n, v, u, t, s, r, q, LOOP"`;
+
+exports[`spiral walk v character 1`] = `"HI, a, b, c, d, e, f, g, o, w, 5, 4, v, n, LOOP"`;
