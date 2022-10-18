@@ -19,9 +19,9 @@ The function should return a single string.
 
 For example, given the following matrix:
 ```
-HI 1 2 3 v4
->9 10 11 v12 13
-^14 15 16 17 <18
+HI  1  2  3   v4
+>9  10 11 v12 13
+^14 15 16 17  <18
 ```
 
 The function should return the following output:
