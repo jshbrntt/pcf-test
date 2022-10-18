@@ -4,7 +4,7 @@ Written in JavaScript for [Node.js](https://nodejs.org/en/download/) v16.17.0.
 
 Install dependencies with [`yarn`](https://yarnpkg.com/getting-started/install).
 
-### Output of `yarn start`
+#### Output of `yarn start`
 
 ```shell
 yarn start
