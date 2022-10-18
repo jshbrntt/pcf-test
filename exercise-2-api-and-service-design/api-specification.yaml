@@ -1,0 +1,110 @@
+openapi: 3.0.3
+info:
+  title: PCF Game Mode API - OpenAPI 3.0
+  version: 1.0.0
+servers:
+  - url: https://example.test/api/v1
+paths:
+  /gamemode/popular/{region}:
+    get:
+      tags:
+        - gamemode
+      summary: Get the current most popular game modes for the region.
+      operationId: getPopulateGameModes
+      parameters:
+        - name: region
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/Region'
+      responses:
+        '200':
+          description: A successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegionPopularGameModesResponse'
+        '404':
+          description: Popular game modes for region not found
+        '500':
+          description: Internal server error
+  /events:
+    post:
+      tags:
+        - events
+      summary: Report user events.
+      operationId: reportUserEvents
+      requestBody:
+        description: Report user events
+        content: 
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/ReportUserEventsRequest'
+      responses:
+        '200':
+          description: User events successfully reported
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    ReportUserEventsRequest:
+      description: A list of game modes in order of popularity relative to the region
+      type: array
+      items:
+        $ref: '#/components/schemas/UserEvent'
+      example:
+        - event: SEARCHED_FOR_MATCH
+          tags:
+            region: CA
+            gamemode: CAPTURE_THE_FLAG
+    UserEvent:
+      description: A user event
+      type: object
+      properties:
+        event:
+          description: A user event enum.
+          type: string
+          enum:
+            - SEARCHED_FOR_MATCH
+        tags:
+          type: object
+          properties:
+            region:
+              $ref: '#/components/schemas/Region'
+            gamemode:
+              $ref: '#/components/schemas/GameMode'
+      example:
+        event: SEARCHED_FOR_MATCH
+        tags:
+          region: GB
+          gamemode: FREE_FOR_ALL
+    RegionPopularGameModesResponse:
+      description: A list of game modes in order of popularity relative to the region
+      type: array
+      items:
+        $ref: '#/components/schemas/GameMode'
+      example:
+        - FREE_FOR_ALL
+        - CAPTURE_THE_FLAG
+        - HARDPOINT
+    Region:
+      description: A valid 2-digit ISO country code (ISO 3166-1 alpha-2)
+      type: string
+      pattern: '^[A-Z]{2}$'
+      example: US
+    GameMode:
+      description: A game mode enum.
+      type: string
+      enum:
+        - TEAM_DEATHMATCH
+        - CAPTURE_THE_FLAG
+        - FREE_FOR_ALL
+        - CYBER_ATTACK
+        - DOMINATION
+        - SEARCH_AND_DESTROY
+        - HEADQUARTERS
+        - HARDPOINT
+        - KILL_CONFIRMED
+        - TDM_20_PLAYERS
+        - DOM_20_PLAYERS
+      example: SEARCH_AND_DESTROY

@@ -1,0 +1,12 @@
+sequenceDiagram
+    Game Client->>+REST API: POST /events
+    REST API->>+Event Store: Write events
+    Event Store->>-REST API: Events written
+    REST API->>-Game Client: 200 Success
+    loop Every hour (interval customizable)
+        Event Store->>Read DB: Build popular game mode by region views
+    end
+    Game Client->>+REST API: GET /gamemode/popular/{region}
+    REST API->>+Read DB: Retrieve popular game modes for region
+    Read DB->>-REST API: Game modes retrieved
+    REST API->>-Game Client: 200 RegionPopularGameModesResponse
