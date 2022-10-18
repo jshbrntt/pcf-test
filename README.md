@@ -1,6 +1,10 @@
 # PCF Test
 
-## 03. Programming + Service Design test
+## Solutions
+- [Exercise 1: Programming](./exercise-1/README.md)
+- [Exercise 2: API and service design](./exercise-2/README.md)
+
+## Test Brief
 
 ### Exercise 1: Programming
 Given a 2D matrix of strings as its input, write a function that traverses the matrix:

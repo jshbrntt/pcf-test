@@ -1,3 +1,5 @@
+# Exercise 2: API and service design
+
 ## REST API specification
 I created a rough REST API outline in [`api-specification.yaml`](./api-specification.yaml) as an OpenAPI 3 definition.
 

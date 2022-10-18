@@ -1,4 +1,26 @@
-Test output.
+# Exercise 1: Programming
+
+Written in JavaScript for [Node.js](https://nodejs.org/en/download/) v16.17.0.
+
+Install dependencies with [`yarn`](https://yarnpkg.com/getting-started/install).
+
+### Output of `yarn start`
+
+```shell
+yarn start
+yarn run v1.22.18
+$ node .
+Grid to be walked:
+    HI  1  2  3   v4
+    >9  10 11 v12 13
+    ^14 15 16 17  <18
+    
+Path taken:
+HI, 1, 2, 3, 4, 13, 18, 17, 16, 15, 14, 9, 10, 11, 12, LOOP
+✨  Done in 0.37s.
+```
+
+#### Output of `yarn test`
 
 ```shell
 $ yarn test
