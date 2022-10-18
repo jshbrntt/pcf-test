@@ -1,8 +1,8 @@
 # PCF Test
 
 ## Solutions
-- [Exercise 1: Programming](./exercise-1/README.md)
-- [Exercise 2: API and service design](./exercise-2/README.md)
+- [Exercise 1: Programming](./exercise-1)
+- [Exercise 2: API and service design](./exercise-2)
 
 ## Test Brief
 
